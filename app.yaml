@@ -23,9 +23,10 @@ spec:
         - mountPath: /conf
           name: agent-config
       volumes:
-      - configMap:
+      - name: agent-config
+        configMap:
+          name: agent-config
           items:
           - key: agent.yaml
             path: agent.yaml
-          name: agent-config
-        name: agent-config
+        
